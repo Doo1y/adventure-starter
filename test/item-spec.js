@@ -1,22 +1,22 @@
 const { expect } = require('chai');
 
-const {Player} = require("../class/player.js");
-const {Room} = require("../class/room.js");
-const {Item} = require("../class/item.js");
-const {Food} = require("../class/food.js");
+const { Player } = require("../class/player.js");
+const { Room } = require("../class/room.js");
+const { Item } = require("../class/item.js");
+const { Food } = require("../class/food.js");
 const { World } = require("../class/world")
 
-const worldData = require('../data/world-data')
+const worldData = require('../data/world-data');
 
-describe ('Item', function () {
+describe('Item', function () {
+  new
+    it('should have name and description attributes', function () {
+      let item = new Item("rock", "just a simple rock");
 
-  it('should have name and description attributes', function () {
-    let item = new Item("rock", "just a simple rock");
+      expect(item.name).to.equal("rock");
+      expect(item.description).to.equal("just a simple rock");
 
-    expect(item.name).to.equal("rock");
-    expect(item.description).to.equal("just a simple rock");
-
-  });
+    });
 
 
   it('can be retrieved from player inventory by name', function () {
@@ -79,7 +79,7 @@ describe ('Item', function () {
 
   });
 
-  it('a rock should exist within the Crossroad', function() {
+  it('a rock should exist within the Crossroad', function () {
     let world = new World();
     world.loadWorld(worldData);
 
@@ -88,11 +88,10 @@ describe ('Item', function () {
     expect(roomItems[0].name).to.equal('rock')
   })
 
-
 });
 
 
-describe ('Food', function () {
+describe('Food', function () {
 
 
   it('should have name and description attributes', function () {
@@ -146,7 +145,7 @@ describe ('Food', function () {
     expect(player.items.length).to.equal(1);
   });
 
-  it('a sandwich should exist at the Northern point', function() {
+  it('a sandwich should exist at the Northern point', function () {
     let world = new World();
     world.loadWorld(worldData);
 
@@ -154,6 +153,5 @@ describe ('Food', function () {
     roomItems = room.items;
     expect(roomItems[0].name).to.equal('sandwich')
   });
-
 
 });

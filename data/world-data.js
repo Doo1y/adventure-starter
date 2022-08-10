@@ -29,7 +29,7 @@ module.exports = {
             name: "Southern point",
             description: "You are standing at the south point of a crossroad. To the north, you see an empty intersection.",
             exits: {n: 1}
-        }
+        },
     ],
     items: [
         {
@@ -42,6 +42,6 @@ module.exports = {
             description: "A tasty looking sandwich",
             room: 2,
             isFood: true
-        }
+        },
     ]
 }
